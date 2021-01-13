@@ -81,9 +81,9 @@ void contorllXrandrBrightness(char *Monitor, double brightnessRate)
 int main(int argc, char *argv[])
 {
     int fd, wd;
-    char *FILE_NAME1 = "/sys/class/backlight/intel_backlight/brightness";
-    char *FILE_NAME2 = "/sys/class/backlight/intel_backlight/max_brightness";
-    char *Monitor = "eDP-1-1";
+    char *FILE_NAME1 = "/sys/class/backlight/intel_backlight/brightness";     // File address for backlight brightness.
+    char *FILE_NAME2 = "/sys/class/backlight/intel_backlight/max_brightness"; // File address for backlight max brightness vlaue.
+    char *Monitor = "eDP-1-1";                                                //Your monitor name, you can use "xrandr --verbose" on shell to check which monitor is connected.
     if (argv[1] != NULL)
     {
         Monitor = argv[1];
@@ -112,9 +112,9 @@ int main(int argc, char *argv[])
         current_rate = getXrandrBrightness();
         target_value = read_value(FILE_NAME1);
         max_value = read_value(FILE_NAME2);
-        target_rate = (double)target_value / max_value;
+        target_rate = (double)target_value / max_value * 0.9 + 0.1; // Set theshold, let brightness rate never less than 0.1.
         compareGAP = target_rate - current_rate;
-        if (compareGAP >= 0.006 | compareGAP <= -0.004)
+        if (compareGAP >= 0.006 || compareGAP <= -0.004)
         {
             contorllXrandrBrightness(Monitor, target_rate);
         }
