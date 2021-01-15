@@ -4,10 +4,11 @@ For monitor brightness (e.g. OLED) that Ubuntu system can't control.
 
 ## Build
 
-The build requires `inotify-tools-dev` package:
+The build requires `xrandr` package:
 
 ```shell
-$ sudo apt install inotify-tools-dev
+$ sudo apt-get update
+$ sudo apt-get install x11-xserver-utils
 ```
 
 ---
