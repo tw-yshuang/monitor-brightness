@@ -1,5 +1,7 @@
 # monitor-brightness
 
+Inspire from [code](https://github.com/udifuchs/icc-brightness) by udifuchs.
+
 For monitor brightness (e.g. OLED) that Ubuntu system can't control.
 
 ## Build
