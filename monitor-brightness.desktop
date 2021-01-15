@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Monitor Brightness
+Comment=Use xrandr to control monitor brightness.
+Exec=monitor-brightness
+Terminal=False
+X-GNOME-Autostart-enabled=true

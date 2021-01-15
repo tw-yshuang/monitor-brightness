@@ -65,11 +65,11 @@ void getConcatedWord(char *command_buffer, char *wordArray[], int size_of_array,
     strcpy(command_buffer, concatedWord);
 }
 
-void contorllXrandrBrightness(char *Monitor, double brightnessRate)
+void contorllXrandrBrightness(char *monitorName, double brightnessRate)
 {
     char command_rate[16];
     sprintf(command_rate, "%f", brightnessRate); // Convert double to char
-    char *command[] = {"xrandr --output ", Monitor, " --brightness ", command_rate};
+    char *command[] = {"xrandr --output ", monitorName, " --brightness ", command_rate};
     int command_len = getWordLenght(command, sizeof(command));
     char *command_buffer = malloc(command_len);
     getConcatedWord(command_buffer, command, sizeof(command), command_len);
@@ -83,8 +83,13 @@ int main(int argc, char *argv[])
     int fd, wd;
     char *FILE_NAME1 = "/sys/class/backlight/intel_backlight/brightness";     // File address for backlight brightness.
     char *FILE_NAME2 = "/sys/class/backlight/intel_backlight/max_brightness"; // File address for backlight max brightness vlaue.
-    char *Monitor = "eDP-1-1";                                                //Your monitor name, you can use "xrandr --verbose" on shell to check which monitor is connected.
-    if (argv[1] != NULL)
+    char *Monitor;
+    if (argv[1] == NULL)
+    {
+        printf("Usage: monitor-brightness [monitor_name]\n\nIf you want to find your monitor_name, use:\n   xrandr | grep ' connected ' | awk '{ print$1 }'\n");
+        return 0;
+    }
+    else
     {
         Monitor = argv[1];
     }
