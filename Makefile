@@ -15,6 +15,7 @@ install: $(TARGET)
 	mkdir -p $(DESTDIR)$(AUTO_START_PATH)
 	sed -i "s/Exec=$(TARGET)/& $(Monitor)/" $(TARGET).desktop
 	install -m 644 $(TARGET).desktop $(DESTDIR)$(AUTO_START_PATH)
+	git checkout $(TARGET).desktop 
 
 .PHONY: clean uninstall
 clean:

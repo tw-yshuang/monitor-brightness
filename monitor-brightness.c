@@ -93,7 +93,6 @@ int main(int argc, char *argv[])
     {
         Monitor = argv[1];
     }
-
     struct inotify_event *event;
     // char buf[BUFSIZ];
     char buf[128];
@@ -112,6 +111,7 @@ int main(int argc, char *argv[])
         perror("inotify_add-watch");
     }
 
+    sleep(1);
     do
     {
         current_rate = getXrandrBrightness();
