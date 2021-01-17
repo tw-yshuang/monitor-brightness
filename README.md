@@ -17,31 +17,6 @@ $ sudo apt-get install x11-xserver-utils
 
 ## Installation
 
-### Run Tool
-
-If you want to run the tool, run:
-
-```shell
-$ make monitor-brightness
-$ ./monitor-brightness [monitor_name]
-```
-
-#### NOTE
-
-You need to find your `monitor_name`, use:
-
-```shell
-$ xrandr | grep " connected " | awk '{ print$1 }'
-```
-
-### Remove Tool
-
-```shell
-$ make clean
-```
-
----
-
 ### Auto Start Install
 
 If you want to install to auto-start when logging-in to the Gnome, run:
@@ -60,4 +35,29 @@ It will start it on your next logging-in. You can control by your brightness key
 
 ```shell
 $ make uninstall
+```
+
+---
+
+### Run Tool
+
+If you only want to run the tool, run:
+
+```shell
+$ make monitor-brightness
+$ ./monitor-brightness [monitor_name]
+```
+
+#### NOTE
+
+You need to find your `monitor_name`, use:
+
+```shell
+$ xrandr | grep " connected " | awk '{ print$1 }'
+```
+
+### Remove Tool
+
+```shell
+$ make clean
 ```
