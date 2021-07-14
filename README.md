@@ -4,6 +4,14 @@ Inspire from [code](https://github.com/udifuchs/icc-brightness) by udifuchs.
 
 For monitor brightness (e.g. OLED) that Ubuntu system can't control.
 
+## One script to build & install
+this script includ [Build](#build) & [Auto Start Install](#auto-start-install)
+```shell
+$ bash install.sh
+```
+
+---
+
 ## Build
 
 The build requires `xrandr` package:
@@ -19,7 +27,7 @@ $ sudo apt-get install x11-xserver-utils
 
 ### Auto Start Install
 
-If you want to install to auto-start when logging-in to the Gnome, run:
+If you want to install auto-start method when logging-in to the Gnome, run:
 
 ```shell
 $ sudo make
@@ -27,9 +35,9 @@ $ sudo make
 
 It will auto select one monitor that is connected to install.
 
-If you want to choise monitor to auto start , open `Makefile` type your monitor-name on `Monitor` variable.
+If you want to choise monitor to auto-start , open `Makefile` type your monitor-name on `Monitor` variable.
 
-It will start it on your next logging-in. You can control by your brightness key or other method that can control **backlight** on the display.
+It will start it when the next logging-in. You can control by your brightness key or other method that can control **backlight** on the display.
 
 ### Uninstall
 
