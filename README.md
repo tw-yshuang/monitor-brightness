@@ -5,7 +5,7 @@ Inspire from [code](https://github.com/udifuchs/icc-brightness) by udifuchs.
 For monitor brightness (e.g. OLED) that Ubuntu system can't control.
 
 ## One script to build & install
-this script includ [Build](#build) & [Auto Start Install](#auto-start-install)
+this script include [Build](#build) & [Auto Start Install](#auto-start-install)
 ```shell
 $ bash install.sh
 ```
