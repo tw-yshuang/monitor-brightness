@@ -8,7 +8,7 @@ For monitor brightness (e.g. OLED) that Ubuntu system can't control.
 Ubuntu official seems like it already supports OLED brightness natively, is time to deprecate this repository, but it is still welcome to commit  issues or discuss some techniques in here 😁
 
 ## One script to build & install
-this script includ [Build](#build) & [Auto Start Install](#auto-start-install)
+this script include [Build](#build) & [Auto Start Install](#auto-start-install)
 ```shell
 $ bash install.sh
 ```
